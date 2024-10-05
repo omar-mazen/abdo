@@ -19,8 +19,8 @@ document.querySelectorAll(".image-gallery").forEach((viewer) => {
         thumbnail.scrollIntoView({
           behavior: "smooth",
           block: "nearest",
-          inline: "start",
-        }); // Adjust scrolling behavior
+          inline: "nearest", // Adjust this to prevent a large horizontal scroll
+        });
       }
     });
   }
