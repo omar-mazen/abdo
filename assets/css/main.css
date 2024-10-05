@@ -55,32 +55,31 @@ body {
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border-bottom: 1px rgba(0, 0, 0, 0.2) solid;
-  nav {
-    height: 48px;
-    padding: 0 16px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    .logo {
-      font-family: var(--header-font);
-      font-size: 2rem;
-    }
+}
+nav {
+  height: 48px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+nav .logo {
+  font-family: var(--header-font);
+  font-size: 2rem;
+}
 
-    ul {
-      display: flex;
-      gap: 10px;
-      font-family: var(--header-font);
-      font-size: 1rem;
-      letter-spacing: 2px;
-
-      li:not(:last-child) {
-        padding: 8px 16px;
-      }
-      li:last-of-type {
-        padding: 8px 6px;
-      }
-    }
-  }
+nav ul {
+  display: flex;
+  gap: 10px;
+  font-family: var(--header-font);
+  font-size: 1rem;
+  letter-spacing: 2px;
+}
+nav li:not(:last-child) {
+  padding: 8px 16px;
+}
+nav li:last-of-type {
+  padding: 8px 6px;
 }
 .hero {
   max-height: calc(100vh - 48px);
@@ -88,15 +87,8 @@ body {
   object-position: center;
   overflow: hidden;
   width: 100%;
-  img {
-    width: 100%;
-    height: 100%;
-    -o-object-fit: cover;
-    object-fit: cover;
-    -o-object-position: center;
-    object-position: center;
-  }
 }
+.hero img
 /*################## #### ##################*/
 /*################## main ##################*/
 /*################## #### ##################*/
