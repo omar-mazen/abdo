@@ -8,6 +8,7 @@
   --header-font: "Bebas Neue", sans-serif;
   --base-font: "Open Sans", sans-serif;
 }
+
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
@@ -28,24 +29,29 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
 body {
   overflow-x: hidden;
   color: var(--main-text-color);
   font-family: var(--base-font);
   overflow-x: hidden;
 }
+
 .container {
   width: 100%;
   max-width: 1024px;
   margin: auto;
 }
+
 .disabled {
   opacity: 0.5;
   cursor: not-allowed !important;
 }
+
 /*################## ####### ##################*/
 /*################## landing ##################*/
 /*################## ####### ##################*/
+
 .nav-container {
   position: -webkit-sticky;
   position: sticky;
@@ -56,6 +62,7 @@ body {
   backdrop-filter: blur(10px);
   border-bottom: 1px rgba(0, 0, 0, 0.2) solid;
 }
+
 nav {
   height: 48px;
   padding: 0 16px;
@@ -63,6 +70,7 @@ nav {
   align-items: center;
   justify-content: space-between;
 }
+
 nav .logo {
   font-family: var(--header-font);
   font-size: 2rem;
@@ -75,12 +83,15 @@ nav ul {
   font-size: 1rem;
   letter-spacing: 2px;
 }
+
 nav li:not(:last-child) {
   padding: 8px 16px;
 }
+
 nav li:last-of-type {
   padding: 8px 6px;
 }
+
 .hero {
   max-height: calc(100vh - 48px);
   -o-object-position: center;
@@ -88,18 +99,22 @@ nav li:last-of-type {
   overflow: hidden;
   width: 100%;
 }
+
 .hero img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
+
 /*################## #### ##################*/
 /*################## main ##################*/
 /*################## #### ##################*/
+
 main section {
   display: flow-root;
   padding: 50px 16px;
 }
+
 main section h2 {
   font-family: var(--header-font);
   font-size: 2.5rem;
@@ -107,6 +122,7 @@ main section h2 {
   font-weight: 500;
   margin-bottom: 20px;
 }
+
 main section p {
   font-size: 0.9rem;
   color: var(--secondary-text-color);
@@ -116,6 +132,7 @@ main section p {
   margin: 20px 0;
   word-break: break-word;
 }
+
 main section.project-description {
   text-align: center;
   margin: 100px 16px 50px;
@@ -123,33 +140,37 @@ main section.project-description {
 
 main section:not(.project-description) {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 2fr 5fr;
   grid-template-rows: auto 1fr;
   align-items: start;
   -moz-column-gap: 20px;
   column-gap: 20px;
-  .image-container {
-    grid-column: 1;
-    grid-row: 1/3;
-    width: 100%;
-    img {
-      aspect-ratio: 595/841;
-      width: 100%;
-      -o-object-fit: cover;
-      object-fit: cover;
-    }
-  }
-  h2 {
-    grid-column: 2;
-    grid-row: 1;
-    margin-top: -10px !important;
-    margin-bottom: 10px !important;
-  }
-  p {
-    grid-column: 2;
-    grid-row: 2;
-    margin: 10px 0;
-  }
+}
+
+main section:not(.project-description) .image-container {
+  grid-column: 1;
+  grid-row: 1 / 3;
+  width: 100%;
+}
+
+main section:not(.project-description) .image-container img {
+  aspect-ratio: 595 / 841;
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+main section:not(.project-description) h2 {
+  grid-column: 2;
+  grid-row: 1;
+  margin-top: -10px !important;
+  margin-bottom: 10px !important;
+}
+
+main section:not(.project-description) p {
+  grid-column: 2;
+  grid-row: 2;
+  margin: 10px 0;
 }
 
 /*################## ############ ##################*/
@@ -158,92 +179,101 @@ main section:not(.project-description) {
 
 section.team-members {
   padding: 50px 0;
-  h2 {
-    font-family: var(--header-font);
-    font-size: 2.5rem;
-    letter-spacing: 1px;
-    font-weight: 500;
-    margin-bottom: 10px;
-  }
-  .team-members-container {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, 200px);
-    justify-content: space-evenly;
-    gap: 20px;
-    height: auto;
-    padding-bottom: 20px;
-    .member-container {
-      height: 270px;
-    }
-    .member {
-      height: 100%;
-      margin-top: 20px;
-      height: -webkit-fit-content;
-      height: -moz-fit-content;
-      height: fit-content;
-      cursor: pointer;
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 0 12px 6px;
-      width: 100%;
-      background-color: var(--secondary-background-color);
-      border-radius: 10px;
+}
 
-      img {
-        aspect-ratio: 1;
-        height: 100px;
-        -o-object-fit: cover;
-        object-fit: cover;
-        border-radius: 10px;
-        margin: -20px 0 0;
-      }
-      h3 {
-        margin: 8px 0 4px;
-        font-family: var(--header-font);
-        font-size: 1.7rem;
-        font-weight: 500;
-        letter-spacing: 1px;
-      }
-      p {
-        text-align: center;
-        font-size: 0.8rem;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        line-clamp: 2;
-        -webkit-line-clamp: 2;
-        overflow: hidden;
-        max-height: 200px;
-      }
-      .links {
-        transition: 1s linear ease-in-out;
-        display: none;
-        align-items: center;
-        width: 100%;
-        justify-content: space-evenly;
-        padding-top: 5px;
-      }
-    }
-  }
+section.team-members h2 {
+  font-family: var(--header-font);
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+  font-weight: 500;
+  margin-bottom: 10px;
 }
-div.member:hover {
-  .links {
-    display: flex !important;
-  }
-  p {
-    display: block !important;
-    line-clamp: unset !important;
-    -webkit-line-clamp: unset !important;
-    overflow: visible !important;
-    max-height: 200px;
-  }
-  .links a:hover svg {
-    color: #0a66c2 !important;
-    transition: all 0.3s ease-in-out;
-  }
+
+section.team-members .team-members-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 200px);
+  justify-content: space-evenly;
+  gap: 20px;
+  height: auto;
+  padding-bottom: 20px;
 }
+
+section.team-members .team-members-container .member-container {
+  height: 270px;
+}
+
+section.team-members .team-members-container .member {
+  height: 100%;
+  margin-top: 20px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  cursor: pointer;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 12px 6px;
+  width: 100%;
+  background-color: var(--secondary-background-color);
+  border-radius: 10px;
+}
+
+section.team-members .team-members-container .member img {
+  aspect-ratio: 1;
+  height: 100px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border-radius: 10px;
+  margin: -20px 0 0;
+}
+
+section.team-members .team-members-container .member h3 {
+  margin: 8px 0 4px;
+  font-family: var(--header-font);
+  font-size: 1.7rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+section.team-members .team-members-container .member p {
+  text-align: center;
+  font-size: 0.8rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  max-height: 200px;
+}
+
+section.team-members .team-members-container .member .links {
+  transition: 1s linear ease-in-out;
+  display: none;
+  align-items: center;
+  width: 100%;
+  justify-content: space-evenly;
+  padding-top: 5px;
+}
+
+div.member:hover .links {
+  display: flex !important;
+}
+
+div.member:hover p {
+  display: block !important;
+  line-clamp: unset !important;
+  -webkit-line-clamp: unset !important;
+  overflow: visible !important;
+  max-height: 200px;
+}
+
+div.member:hover .links a:hover svg {
+  color: #0a66c2 !important;
+  transition: all 0.3s ease-in-out;
+}
+
 .links a svg {
   transition: all 0.3s ease-in-out;
 }
@@ -251,36 +281,44 @@ div.member:hover {
 @media screen and (max-width: 600px) {
   nav {
     padding: 0 !important;
-
-    .logo {
-      margin: auto;
-    }
-    ul {
-      display: none !important;
-    }
   }
+
+  nav .logo {
+    margin: auto;
+  }
+
+  nav ul {
+    display: none !important;
+  }
+
   h2 {
     font-size: 1.5rem !important;
   }
+
   main section {
     padding: 25px 16px !important;
   }
+
   main section:not(.project-description) {
     column-gap: 20px;
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr auto;
-    h2 {
-      grid-column: 1 !important;
-    }
-    .image-container {
-      grid-column: 1 !important;
-      grid-row: 2 !important;
-    }
-    p {
-      grid-column: 1 !important;
-      grid-row: 3 !important;
-    }
   }
+
+  main section:not(.project-description) h2 {
+    grid-column: 1 !important;
+  }
+
+  main section:not(.project-description) .image-container {
+    grid-column: 1 !important;
+    grid-row: 2 !important;
+  }
+
+  main section:not(.project-description) p {
+    grid-column: 1 !important;
+    grid-row: 3 !important;
+  }
+
   section.team-members h2 {
     padding-left: 10px;
   }
